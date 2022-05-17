@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Comment;
 use Illuminate\Http\Request;
 
+use Auth;
+use DB;
+
 class CommentController extends Controller
 {
     /**
@@ -24,7 +27,7 @@ class CommentController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
@@ -35,7 +38,17 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try {
+            $postProperty[ 'post_id' ] = $request->id;
+            $postProperty[ 'text' ] = $request->text;
+            $postProperty[ 'user_id' ] = Auth::user()->id;
+            // input post property
+            Comment::create( $postProperty );
+            return 'added';
+        } catch ( \Exception $e ) {
+            DB::rollback();
+            return 'error';
+        }
     }
 
     /**

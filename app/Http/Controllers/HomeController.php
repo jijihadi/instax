@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Post;
+use App\Models\User;
 
 class HomeController extends Controller
 {
@@ -26,6 +27,7 @@ class HomeController extends Controller
     public function index()
     {
         $data['post'] = Post::orderBy('created_at', 'desc')->get();
+        $data['user'] = User::inRandomOrder()->limit(5)->get();
         return view('home', $data);
     }
     

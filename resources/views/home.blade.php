@@ -15,7 +15,7 @@
                 <div class="col-md-7">
 
                     <!-- Post Create Box
-                                                                                ================================================= -->
+                                                                                            ================================================= -->
                     <div class="create-post">
                         <div class="row">
                             <div class="alert bg-primary bg-gradient alert-dismissible" role="alert">
@@ -39,12 +39,14 @@
                     <div class="suggestions" id="sticky-sidebar">
                         <h4 class="grey">People to follow</h4>
                         <div class="follow-user">
+                            @foreach ($user as $u)
                             <img src="{{ asset('/assets/images/envato.png') }}" alt=""
                                 class="profile-photo-sm pull-left" />
-                            <div>
-                                <h5><a href="timeline.html" class="profile">Diana Amber</a></h5>
-                                <a href="#"><span class="follows"> follow</span></a></h5>
-                            </div>
+                                <div>
+                                    <h5><a href="timeline.html" class="profile">{{$u->name}}</a></h5>
+                                    <a href="#"><span class="follows"> follow</span></a></h5>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -54,12 +56,31 @@
 @endsection
 
 @section('script')
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+    {{-- comment func --}}
     <script>
         $(function() {
-            $('#like').click(function() {
+            $('.comment').on('submit', function(e) {
+
+                e.preventDefault();
+                var pid = $.parseJSON($(this).attr('data-id'));
+                $.ajax({
+                    type: 'POST',
+                    url: 'comment',
+                    data: $(this).serialize(),
+                    success: function(response) {
+                        $(".c" + pid).load(location.href + " .c" + pid);
+                        $('.comment-input').val('');
+                    }
+                });
+
+            });
+
+        });
+    </script>
+    {{-- like func --}}
+    <script>
+        $(function() {
+            $('.like').click(function() {
                 var pid = $.parseJSON($(this).attr('data-id'));
                 $.ajax({
                     headers: {
@@ -72,20 +93,20 @@
                     },
                     success: function(response) {
                         console.log(response);
-                        if (response == 'added') {
-                            $('.' + pid).removeClass('social-react');
-                            $('.' + pid).addClass('social-react-yes');
+                        if (response != 'added') {
+                            $('.' + pid).css("color", "#1f1f1f");
+                            $(".l" + pid).load(location.href + " .l" + pid);
                         }
-                        if (response == 'deleted') {
-                            $('.' + pid).removeClass('social-react-yes');
-                            $('.' + pid).addClass('social-react');
+                        if (response != 'deleted') {
+                            $('.' + pid).css("color", "#d8304c");
+                            $(".l" + pid).load(location.href + " .l" + pid);
                         }
-                        $('.post-like').html("liked by {{ count(allbykey('likes', 'post_id', "+pid+")) }} people");
                     }
                 });
             });
         });
     </script>
+    {{-- tinymce func --}}
     <script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js'
         referrerpolicy="origin"></script>
     <script>
@@ -95,6 +116,7 @@
             menubar: false,
         });
     </script>
+    {{-- drop drag upload --}}
     <script>
         document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
             const dropZoneElement = inputElement.closest(".drop-zone");
