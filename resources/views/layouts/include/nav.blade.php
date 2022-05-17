@@ -18,7 +18,7 @@
                 <ul class="nav navbar-nav navbar-right main-menu">
                     <li><a data-toggle="modal" data-target=".modal-add"><i
                                 class="fa-solid fa-circle-plus fa-xl text-white"></i></a></li>
-                    <li><a href="#"><i class="fa-solid fa-house fa-xl  text-white"></i></a></li>
+                    <li><a href="{{home}}"><i class="fa-solid fa-house fa-xl  text-white"></i></a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
                             aria-expanded="false"><i class="fa-solid fa-user fa-xl  text-white"></i></a>
