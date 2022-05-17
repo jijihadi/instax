@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
 
+
+use Auth;
+use DB;
+
 class HomeController extends Controller
 {
     /**
@@ -29,6 +33,13 @@ class HomeController extends Controller
         $data['post'] = Post::orderBy('created_at', 'desc')->get();
         $data['user'] = User::inRandomOrder()->limit(5)->get();
         return view('home', $data);
+    }
+    
+    public function profile()
+    {
+        $data['user'] = User::where('id', Auth::user()->id)->get()->toarray()[0];
+        $data['post'] = Post::where('user_id', Auth::user()->id)->get();
+        return view('profile', $data);
     }
     
 }

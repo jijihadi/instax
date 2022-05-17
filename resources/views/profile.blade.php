@@ -15,41 +15,52 @@
                 <div class="col-md-7">
 
                     <!-- Post Create Box
-                                                                                            ================================================= -->
+                                                                                                ================================================= -->
                     <div class="create-post">
                         <div class="row">
-                            <div class="alert bg-primary bg-gradient alert-dismissible" role="alert">
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
-                                        aria-hidden="true">&times;</span></button>
-                                <h2 class="welcome"><strong> Selamat datang, {{ Auth::user()->name }}.</strong></h2>
-                                <i> i hope ur day bright as the fu*kin sun</i>
+                            <div class="post-content">
+                                <div class="post-container col-md-12">
+                                    <div class="col-md-4">
+                                        @if ($user['pict']=='')
+                                        <img src="{{ asset('/upload/profile/default.jpg') }}" alt="post-image" class="img-responsive profile-image" />
+                                        @endif
+                                        @if ($user['pict']!='')
+                                        <img src="{{ asset('/upload/profile') . '/' . $user['pict'] }}" alt="post-image" class="img-responsive profile-image" />
+                                        @endif
+                                    </div>
+                                    <div class="col-md-7">
+                                        <h4>{{ $user['name'] }}</h4>
+                                        <div class="row showcase">
+                                            <div class="col-md-4">
+                                                <b>{{ countbykey('posts', 'user_id', $user['id']) }}</b><span> Post</span>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <b>{{ countbykey('relations', 'follows', $user['id']) }}</b><span>
+                                                    Follower</span></div>
+                                            <div class="col-md-4">
+                                                <b>{{ countbykey('relations', 'user_id', $user['id']) }}</b><span>
+                                                    Following</span></div>
+                                        </div>
+                                        <div class="col-md-12 row">
+                                            <span><b><strong>{{sexis($user['sex'])}}</strong></b></span>
+                                        </div>
+                                        <div class="col-md-12 row">
+                                            <span>{{$user['description']}}</span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div><!-- Post Create Box End -->
 
                     <!-- Media ================================================= -->
 
-                    @include('include.post')
+                    @include('include.post-profile')
                 </div>
 
                 @include('include.add-post')
 
-                <!-- Newsfeed Common Side Bar Right================================================= -->
-                <div class="col-md-3 static">
-                    <div class="suggestions" id="sticky-sidebar">
-                        <h4 class="grey">People to follow</h4>
-                        <div class="follow-user">
-                            @foreach ($user as $u)
-                            {{$u->pict}}
-                            {!!smallpp($u->pict)!!}
-                                <div>
-                                    <h5><a href="timeline.html" class="profile">{{$u->name}}</a></h5>
-                                    <a href="#"><span class="follows"> follow</span></a>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </div>
@@ -100,32 +111,6 @@
                         if (response != 'deleted') {
                             $('.' + pid).css("color", "#d8304c");
                             $(".l" + pid).load(location.href + " .l" + pid);
-                        }
-                    }
-                });
-            });
-        });
-        $(function() {
-            $('.like2').click(function() {
-                var pid = $.parseJSON($(this).attr('data-id'));
-                $.ajax({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    },
-                    type: 'POST',
-                    url: 'like',
-                    data: {
-                        id: pid
-                    },
-                    success: function(response) {
-                        console.log(response);
-                        if (response != 'added') {
-                            $('.' + pid).css("color", "#1f1f1f");
-                            $(".l2" + pid).load(location.href + " .l" + pid);
-                        }
-                        if (response != 'deleted') {
-                            $('.' + pid).css("color", "#d8304c");
-                            $(".l2" + pid).load(location.href + " .l" + pid);
                         }
                     }
                 });

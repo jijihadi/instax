@@ -1301,6 +1301,37 @@ ul.online-users li span.online-dot{
 }
 }
 
+.showcase{
+  color: #1f1f1f;
+}
+
+.profile-image{
+  margin: 0 0 0 2em;
+  border-radius: 50%;
+  max-width:7em;
+}
+
+h4{
+  color: #1f1f1f;
+}
+
+.crop{
+  max-height: 13em;
+  overflow: hidden;
+}
+
+.profile-content{
+  max-width: 48%; 
+  margin:.4em .41em .4em .41em;
+}
+
+@media only screen and (max-width : 992px) {
+  .profile-content{
+    max-width: 100%; 
+    margin:.4em .41em .4em .41em;
+  }
+}
+
 
 /*==================================================
   Nearby People CSS

@@ -14,7 +14,7 @@ function allbykey( $table, $key, $id ) {
 function limitbykey( $table, $key, $id, $limit ) {
     $comm = DB::table( $table )
     ->where( $key, $id ) // Getting the Authenticated user id
-    ->limit($limit)
+    ->limit( $limit )
     ->get();
     if ( $comm != null ) {
         return $comm;
@@ -23,7 +23,7 @@ function limitbykey( $table, $key, $id, $limit ) {
     }
 }
 
-function allby2id( $table, $key, $key2, $id, $id2) {
+function allby2id( $table, $key, $key2, $id, $id2 ) {
     $comm = DB::table( $table )
     ->where( $key, $id ) // Getting the Authenticated user id
     ->where( $key2, $id2 ) // Getting the Authenticated user id
@@ -43,6 +43,34 @@ function namabyid( $table, $field, $id ) {
         return $comm[ 0 ]->$field;
     } elseif ( $comm == null ) {
         return '0';
+    }
+}
+
+function countbykey( $table, $idname, $id ) {
+    $comm = DB::table( $table )
+    ->where( $idname, $id ) // Getting the Authenticated user id
+    ->get()->toArray();
+    if ( $comm != null ) {
+        return count( $comm );
+    } elseif ( $comm == null ) {
+        return '0';
+    }
+}
+
+function sexis( $val ) {
+    if ( $val != 1 ) {
+        return 'Wanita';
+    } elseif ( $val == 1 ) {
+        return 'Pria';
+    }
+}
+
+function smallpp( $val ) {
+    if ( $val ==  '' || $val==null ) {
+        return "<img src = ".asset('/upload/profile/default.jpg')." alt = 'post-image' class = 'profile-photo-xs pull-left' />";
+    }
+    if ( $val !=  '' ) {
+        return "<img src = ".asset('/upload/profile') . '/' . $val ." alt = 'post-image' class = 'profile-photo-xs pull-left' />";
     }
 }
 

@@ -22,6 +22,7 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
     Route::post('add-post', [App\Http\Controllers\PostController::class, 'store'])->name('add-post');
     Route::post('like', [App\Http\Controllers\LikeController::class, 'store'])->name('like');
     Route::post('comment', [App\Http\Controllers\CommentController::class, 'store'])->name('comment');

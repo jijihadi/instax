@@ -5,7 +5,7 @@ $i = 0;
     <div class="post-content">
         <div class="post-container">
             {{-- data user --}}
-            <img src="{{ asset('/assets/images/envato.png') }}" alt="user" class="profile-photo-xs pull-left" />
+            {!!smallpp($p->pict)!!}
             <div class="post-detail">
                 <div class="user-info">
                     <h5><a href="timeline.html" class="profile"> &nbsp;
@@ -37,7 +37,7 @@ $i = 0;
                                 class="fa-solid fa-heart fa-xl"></i></a>
                     @endif
                     {{-- comment --}}
-                    <a class="btn social-react"><i class="fa-solid fa-comment fa-xl"></i></a>
+                    <a class="btn social-react " onclick="$('#comment{{$p->id}}').focus()"><i class="fa-solid fa-comment fa-xl"></i></a>
                     {{-- share --}}
                     <a class="btn social-react"><i class="fa-solid fa-share fa-xl"></i></a>
                 </div>
@@ -100,12 +100,22 @@ $i = 0;
                                                 </h5>
                                             </div>
                                             <div class="reaction">
-                                                <a class="btn social-react"><i class="fa-solid fa-heart fa-xl"></i></a>
-                                                <a class="btn social-react"><i
-                                                        class="fa-solid fa-comment fa-xl"></i></a>
+                                                {{-- like proccess --}}
+                                                @if (count(allby2id('likes', 'post_id', 'user_id', $p->id, Auth::user()->id)) == 0)
+                                                    <a id="like2" data-id="{{ $p->id }}" class="btn like social-react {{ $p->id }}"><i
+                                                            class="fa-solid fa-heart fa-xl"></i></a>
+                                                @endif
+                                                @if (count(allby2id('likes', 'post_id', 'user_id', $p->id, Auth::user()->id)) != 0)
+                                                    <a id="like2" data-id="{{ $p->id }}"
+                                                        class="btn like social-react-yes {{ $p->id }}"><i
+                                                            class="fa-solid fa-heart fa-xl"></i></a>
+                                                @endif
+                                                {{-- comment --}}
+                                                <a class="btn social-react " onclick="$('.modal-{{ $i }}').modal('toggle');$('#comment{{$p->id}}').focus()"><i class="fa-solid fa-comment fa-xl"></i></a>
+                                                {{-- share --}}
                                                 <a class="btn social-react"><i class="fa-solid fa-share fa-xl"></i></a>
                                             </div>
-                                            <div class="post-like">
+                                            <div class="post-like l2{{$p->id}}">
                                                 liked by {{ count(allbykey('likes', 'post_id', $p->id)) }} people
                                             </div>
                                             <div class="line-divider"></div>
@@ -127,11 +137,6 @@ $i = 0;
                                                     </div>
                                                 @endforeach
                                             @endif
-                                            <div class="post-comment">
-                                                <img src="http://placehold.it/300x300" alt=""
-                                                    class="profile-photo-sm" />
-                                                <input type="text" class="form-control" placeholder="Post a comment">
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -143,11 +148,11 @@ $i = 0;
                 {{-- post own comment --}}
 
                 <div class="post-comment">
-                    <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm" />
+                    {!!smallpp($p->pict)!!}
                     <form data-id="{{$p->id}}" method="POST" class="comment col-lg-12 col-md-12 col-xs-12 ">
                         @csrf
                         <input type="hidden" value="{{$p->id}}" name="id">
-                        <input type="text" class="form-control comment-input" name="text" placeholder="Post a comment">
+                        <input type="text" class="form-control comment-input" id="comment{{$p->id}}" name="text" placeholder="Post a comment">
                     </form>
                 </div>
             </div>
