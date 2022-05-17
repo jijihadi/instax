@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('login');
 });
 
 Auth::routes();
@@ -22,6 +22,11 @@ Auth::routes();
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::post('add-post', [App\Http\Controllers\PostController::class, 'store'])->name('add-post');
+    Route::post('like', [App\Http\Controllers\LikeController::class, 'store'])->name('like');
+    Route::post('comment{$id}', [App\Http\Controllers\CommentController::class, 'store'])->name('comment');
+
+    Route::get('/signout', function () { Auth::logout(); return redirect('/login'); })->name('signout');
 });
 
 Route::group(['middleware' => ['auth', 'isAdmin']], function () {

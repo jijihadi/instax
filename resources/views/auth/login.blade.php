@@ -41,7 +41,7 @@
                                             <label for="firstname" class="sr-only">Name</label>
                                             <input id="name" type="text"
                                                 class="form-control input-group-lg @error('name') is-invalid @enderror"
-                                                name="name" value="{{ old('name') }}" required autocomplete="name"
+                                                name="name" value="{{ old('name') }}" autocomplete="name"
                                                 autofocus placeholder="Name">
                                             @error('name')
                                                 <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@
                                             <label for="email" class="sr-only">Email</label>
                                             <input id="email" type="email"
                                                 class="form-control input-group-lg @error('email') is-invalid @enderror"
-                                                name="email" value="{{ old('email') }}" required autocomplete="email"
+                                                name="email" value="{{ old('email') }}" autocomplete="email"
                                                 placeholder="Your Email">
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@
                                             <label for="password" class="sr-only">Password</label>
                                             <input id="password" type="password"
                                                 class="form-control input-group-lg @error('password') is-invalid @enderror"
-                                                name="password" required autocomplete="new-password" placeholder="Password">
+                                                name="password" autocomplete="new-password" placeholder="Password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">
@@ -83,7 +83,7 @@
                                         <div class="form-group col-xs-12">
                                             <label for="password-confirm" class="sr-only">Confirm Password</label>
                                             <input id="password-confirm" type="password"
-                                                class="form-control input-group-lg " name="password_confirmation" required
+                                                class="form-control input-group-lg " name="password_confirmation"
                                                 autocomplete="new-password" placeholder="Confirm Password">
                                         </div>
                                     </div>
@@ -165,8 +165,8 @@
                                             <label for="my-email" class="sr-only">Email</label>
                                             <input id="my-email"
                                                 class="form-control input-group-lg  @error('email') is-invalid @enderror"
-                                                type="text" name="Email" title="Enter Email" type="email" name="email"
-                                                value="{{ old('email') }}" required autocomplete="email" autofocus
+                                                type="text" title="Enter Email" type="email" name="email"
+                                                value="{{ old('email') }}" autocomplete="email" autofocus
                                                 placeholder="Email">
 
                                             @error('email')
@@ -181,8 +181,7 @@
                                             <label for="my-password" class="sr-only">Password</label>
                                             <input id="my-password" type="password"
                                                 class="form-control input-group-l @error('password') is-invalid @enderror"
-                                                name="password" required autocomplete="current-password"
-                                                placeholder="Password">
+                                                name="password" autocomplete="current-password" placeholder="Password">
 
                                             @error('password')
                                                 <span class="invalid-feedback" role="alert">

@@ -1144,7 +1144,7 @@ ul.online-users li span.online-dot{
   ==================================================*/
 
 .post-content{
-  background: #f8f8f8;
+  background: #fcfcfc;
   border-radius: 4px;
   width: 100%;
   border: 1px solid #f1f2f2;
@@ -1154,7 +1154,7 @@ ul.online-users li span.online-dot{
 }
 
 .post-content img.post-image, video.post-video, .google-maps{
-  width: 100%;
+  width: 120%;
   height: auto;
 }
 
@@ -1167,19 +1167,62 @@ ul.online-users li span.online-dot{
 }
 
 .post-content .post-container .post-detail{
-  margin-left: 65px;
+  margin-left: 5px;
   position: relative;
 }
 
 .post-content .post-container .post-detail .post-text{
+  overflow: hidden;
+  height: 2.3em;
   line-height: 24px;
   margin: 0;
 }
 
 .post-content .post-container .post-detail .reaction{
-  position: absolute;
+  position: left;
+  margin: 1em 0 0 -1em;
   right: 0;
   top: 0;
+}
+
+/* my own */
+/* =================================== */
+.social-react{
+  color: #1f1f1f;
+}
+
+.social-react-yes{
+  color: #d8304c;
+}
+
+.read{
+  color: #1f1f1f;
+  cursor: pointer;
+}
+
+.container-comment{
+  overflow: hidden;
+  height: 5em;
+  line-height: 24px;
+  margin: 0;
+}
+
+.allcomment{
+  color: #b9b9b9;
+  cursor: pointer;
+}
+
+.profile{
+  font-weight: 900;
+  color: #383838;
+  margin: 0 0 0 0;
+  cursor: pointer;
+}
+
+.post-like{
+  font-weight: 900;
+  color: #383838;
+  margin: 0 0 0 0;
 }
 
 .post-content .post-container .post-detail .post-comment{
@@ -1198,6 +1241,64 @@ ul.online-users li span.online-dot{
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   margin: 7px 0;
   min-width: 0;
+}
+
+.drop-zone {
+  max-width: 70em;
+  height: 20em;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  cursor: pointer;
+  color: #cccccc;
+  border: 3px dashed #4aa4f4;
+  border-radius: 10px;
+}
+
+.drop-zone--over {
+  border-style: solid;
+}
+
+.drop-zone__input {
+  display: none;
+}
+
+.drop-zone__thumb {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #cccccc;
+  background-size: cover;
+  position: relative;
+}
+
+.drop-zone__thumb::after {
+  content: attr(data-label);
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5px 0;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.75);
+  font-size: 14px;
+  text-align: center;
+}
+
+.btn-post{
+  margin-top: 10em;bottom: 0;
+}
+
+@media only screen and (max-width : 992px) {
+  .btn-post{
+  margin-top: 1em;bottom: 0;
+}
 }
 
 
@@ -1225,6 +1326,7 @@ ul.online-users li span.online-dot{
   border-bottom: 1px solid #f1f2f2;
   margin-bottom: 20px;
 }
+
 
 
 /*==================================================

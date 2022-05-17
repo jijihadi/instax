@@ -4,17 +4,18 @@
     <div id="page-contents">
         <div class="container">
             <div class="row">
-
-                <!-- Newsfeed Common Side Bar Left
-              ================================================= -->
-                <div class="col-md-3 static">
+                <div class="col-md-12">
+                    @include('layouts.include.alert')
+                </div>
+                <!-- Newsfeed Common Side Bar Left ================================================= -->
+                <div class="col-md-2 static">
                     <!--chat block ends-->
                 </div>
 
                 <div class="col-md-7">
 
                     <!-- Post Create Box
-                ================================================= -->
+                                                                                ================================================= -->
                     <div class="create-post">
                         <div class="row">
                             <div class="alert bg-primary bg-gradient alert-dismissible" role="alert">
@@ -26,887 +27,23 @@
                         </div>
                     </div><!-- Post Create Box End -->
 
-                    <!-- Media
-                ================================================= -->
-                    <div class="media">
-                        <div class="row js-masonry"
-                            data-masonry='{ "itemSelector": ".grid-item", "columnWidth": ".grid-sizer", "percentPosition": true }'>
-                            <div class="grid-sizer col-md-6 col-sm-6"></div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-1">
-                                        <img src="http://placehold.it/800x800" alt="" class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 63</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 12</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">Richard Bell</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
+                    <!-- Media ================================================= -->
 
-                                    <!--Popup-->
-                                    <div class="modal fade modal-1" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins ago
-                                                                </p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i class="icon ion-thumbsup"></i>
-                                                                    13</a>
-                                                                <a class="btn text-red"><i class="fa fa-thumbs-down"></i>
-                                                                    0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor sit
-                                                                    amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                                                    incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                                                    minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-2">
-                                        <img src="http://placehold.it/1637x1275" alt="" class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 100</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 99</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">Sarah Cruiz</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-2" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i class="icon ion-thumbsup"></i>
-                                                                    13</a>
-                                                                <a class="btn text-red"><i class="fa fa-thumbs-down"></i>
-                                                                    0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-3">
-                                        <img src="http://placehold.it/1920x2880" alt=""
-                                            class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 233</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 30</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">Robert Cook</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-3" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i
-                                                                        class="icon ion-thumbsup"></i> 13</a>
-                                                                <a class="btn text-red"><i
-                                                                        class="fa fa-thumbs-down"></i> 0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-4">
-                                        <img src="http://placehold.it/2048x1365" alt=""
-                                            class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 73</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 4</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">John Doe</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-4" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i
-                                                                        class="icon ion-thumbsup"></i> 13</a>
-                                                                <a class="btn text-red"><i
-                                                                        class="fa fa-thumbs-down"></i> 0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-5">
-                                        <img src="http://placehold.it/500x600" alt="" class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 34</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 2</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">Sophia Lee</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-5" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i
-                                                                        class="icon ion-thumbsup"></i> 13</a>
-                                                                <a class="btn text-red"><i
-                                                                        class="fa fa-thumbs-down"></i> 0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-6">
-                                        <img src="http://placehold.it/1280x1000" alt=""
-                                            class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 71</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 0</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">John Doe</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-6" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i
-                                                                        class="icon ion-thumbsup"></i> 13</a>
-                                                                <a class="btn text-red"><i
-                                                                        class="fa fa-thumbs-down"></i> 0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-7">
-                                        <img src="http://placehold.it/1000x1000" alt=""
-                                            class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 55</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 2</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">Alexis Clark</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-7" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1290x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i
-                                                                        class="icon ion-thumbsup"></i> 13</a>
-                                                                <a class="btn text-red"><i
-                                                                        class="fa fa-thumbs-down"></i> 0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-8">
-                                        <img src="http://placehold.it/1600x1400" alt=""
-                                            class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 81</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 1</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">Linda Lohan</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-8" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i
-                                                                        class="icon ion-thumbsup"></i> 13</a>
-                                                                <a class="btn text-red"><i
-                                                                        class="fa fa-thumbs-down"></i> 0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-
-                                </div>
-                            </div>
-                            <div class="grid-item col-md-6 col-sm-6">
-                                <div class="media-grid">
-                                    <div class="img-wrapper" data-toggle="modal" data-target=".modal-9">
-                                        <img src="http://placehold.it/1920x1280" alt=""
-                                            class="img-responsive post-image" />
-                                    </div>
-                                    <div class="media-info">
-                                        <div class="reaction">
-                                            <a class="btn text-green"><i class="fa fa-thumbs-up"></i> 47</a>
-                                            <a class="btn text-red"><i class="fa fa-thumbs-down"></i> 9</a>
-                                        </div>
-                                        <div class="user-info">
-                                            <img src="http://placehold.it/300x300" alt=""
-                                                class="profile-photo-sm pull-left" />
-                                            <div class="user">
-                                                <h6><a href="#" class="profile-link">Julia Cox</a></h6>
-                                                <a class="text-green" href="#">Friend</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!--Popup-->
-                                    <div class="modal fade modal-9" tabindex="-1" role="dialog" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg">
-                                            <div class="modal-content">
-                                                <div class="post-content">
-                                                    <img src="http://placehold.it/1920x1280" alt="post-image"
-                                                        class="img-responsive post-image" />
-                                                    <div class="post-container">
-                                                        <img src="http://placehold.it/300x300" alt="user"
-                                                            class="profile-photo-md pull-left" />
-                                                        <div class="post-detail">
-                                                            <div class="user-info">
-                                                                <h5><a href="timeline.html" class="profile-link">Alexis
-                                                                        Clark</a> <span
-                                                                        class="following">following</span></h5>
-                                                                <p class="text-muted">Published a photo about 3 mins
-                                                                    ago</p>
-                                                            </div>
-                                                            <div class="reaction">
-                                                                <a class="btn text-green"><i
-                                                                        class="icon ion-thumbsup"></i> 13</a>
-                                                                <a class="btn text-red"><i
-                                                                        class="fa fa-thumbs-down"></i> 0</a>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-text">
-                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud
-                                                                    exercitation ullamco laboris nisi ut aliquip ex ea
-                                                                    commodo consequat. Duis aute irure dolor in
-                                                                    reprehenderit in voluptate velit esse cillum dolore eu
-                                                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-                                                                    non proident, sunt in culpa qui officia deserunt mollit
-                                                                    anim id est laborum. <i class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i> <i
-                                                                        class="em em-anguished"></i></p>
-                                                            </div>
-                                                            <div class="line-divider"></div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">Diana
-                                                                    </a><i class="em em-laughing"></i> Lorem ipsum dolor
-                                                                    sit amet, consectetur adipiscing elit, sed do eiusmod
-                                                                    tempor incididunt ut labore et dolore magna aliqua. Ut
-                                                                    enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <p><a href="timeline.html" class="profile-link">John</a>
-                                                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                                                                    sed do eiusmod tempor incididunt ut labore et dolore
-                                                                    magna aliqua. Ut enim ad minim veniam, quis nostrud </p>
-                                                            </div>
-                                                            <div class="post-comment">
-                                                                <img src="http://placehold.it/300x300" alt=""
-                                                                    class="profile-photo-sm" />
-                                                                <input type="text" class="form-control"
-                                                                    placeholder="Post a comment">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!--Popup End-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @include('include.post')
                 </div>
 
-                <!-- Newsfeed Common Side Bar Right
-              ================================================= -->
-                <div class="col-md-2 static">
+                @include('include.add-post')
+
+                <!-- Newsfeed Common Side Bar Right================================================= -->
+                <div class="col-md-3 static">
                     <div class="suggestions" id="sticky-sidebar">
-                        <h4 class="grey">Who to Follow</h4>
+                        <h4 class="grey">People to follow</h4>
                         <div class="follow-user">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
+                            <img src="{{ asset('/assets/images/envato.png') }}" alt=""
+                                class="profile-photo-sm pull-left" />
                             <div>
-                                <h5><a href="timeline.html">Diana Amber</a></h5>
-                                <a href="#" class="text-green">Add friend</a>
-                            </div>
-                        </div>
-                        <div class="follow-user">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                            <div>
-                                <h5><a href="timeline.html">Cris Haris</a></h5>
-                                <a href="#" class="text-green">Add friend</a>
-                            </div>
-                        </div>
-                        <div class="follow-user">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                            <div>
-                                <h5><a href="timeline.html">Brian Walton</a></h5>
-                                <a href="#" class="text-green">Add friend</a>
-                            </div>
-                        </div>
-                        <div class="follow-user">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                            <div>
-                                <h5><a href="timeline.html">Olivia Steward</a></h5>
-                                <a href="#" class="text-green">Add friend</a>
-                            </div>
-                        </div>
-                        <div class="follow-user">
-                            <img src="http://placehold.it/300x300" alt="" class="profile-photo-sm pull-left" />
-                            <div>
-                                <h5><a href="timeline.html">Sophia Page</a></h5>
-                                <a href="#" class="text-green">Add friend</a>
+                                <h5><a href="timeline.html" class="profile">Diana Amber</a></h5>
+                                <a href="#"><span class="follows"> follow</span></a></h5>
                             </div>
                         </div>
                     </div>
@@ -914,4 +51,103 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('script')
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
+    <script>
+        $(function() {
+            $('#like').click(function() {
+                var pid = $.parseJSON($(this).attr('data-id'));
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    type: 'POST',
+                    url: 'like',
+                    data: {
+                        id: pid
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        if (response == 'added') {
+                            $('.' + pid).removeClass('social-react');
+                            $('.' + pid).addClass('social-react-yes');
+                        }
+                        if (response == 'deleted') {
+                            $('.' + pid).removeClass('social-react-yes');
+                            $('.' + pid).addClass('social-react');
+                        }
+                        $('.post-like').html("liked by {{ count(allbykey('likes', 'post_id', "+pid+")) }} people");
+                    }
+                });
+            });
+        });
+    </script>
+    <script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js'
+        referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#mytextarea',
+            toolbar: false,
+            menubar: false,
+        });
+    </script>
+    <script>
+        document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
+            const dropZoneElement = inputElement.closest(".drop-zone");
+            dropZoneElement.addEventListener("click", (e) => {
+                inputElement.click();
+            });
+            inputElement.addEventListener("change", (e) => {
+                if (inputElement.files.length) {
+                    updateThumbnail(dropZoneElement, inputElement.files[0]);
+                }
+            });
+            dropZoneElement.addEventListener("dragover", (e) => {
+                e.preventDefault();
+                dropZoneElement.classList.add("drop-zone--over");
+            });
+            ["dragleave", "dragend"].forEach((type) => {
+                dropZoneElement.addEventListener(type, (e) => {
+                    dropZoneElement.classList.remove("drop-zone--over");
+                });
+            });
+            dropZoneElement.addEventListener("drop", (e) => {
+                e.preventDefault();
+                if (e.dataTransfer.files.length) {
+                    inputElement.files = e.dataTransfer.files;
+                    updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+                }
+                dropZoneElement.classList.remove("drop-zone--over");
+            });
+        });
+
+        function updateThumbnail(dropZoneElement, file) {
+            let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
+            // First time - remove the prompt
+            if (dropZoneElement.querySelector(".drop-zone__prompt")) {
+                dropZoneElement.querySelector(".drop-zone__prompt").remove();
+            }
+            // First time - there is no thumbnail element, so lets create it
+            if (!thumbnailElement) {
+                thumbnailElement = document.createElement("div");
+                thumbnailElement.classList.add("drop-zone__thumb");
+                dropZoneElement.appendChild(thumbnailElement);
+            }
+            thumbnailElement.dataset.label = file.name;
+            // Show thumbnail for image files
+            if (file.type.startsWith("image/")) {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => {
+                    thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+                };
+            } else {
+                thumbnailElement.style.backgroundImage = null;
+            }
+        }
+    </script>
 @endsection
