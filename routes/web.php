@@ -23,9 +23,11 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('/profile', [App\Http\Controllers\HomeController::class, 'profile'])->name('profile');
+    Route::get('peek/{id}', [App\Http\Controllers\HomeController::class, 'users'])->name('peek');
     Route::post('add-post', [App\Http\Controllers\PostController::class, 'store'])->name('add-post');
     Route::post('like', [App\Http\Controllers\LikeController::class, 'store'])->name('like');
     Route::post('comment', [App\Http\Controllers\CommentController::class, 'store'])->name('comment');
+    Route::post('follow', [App\Http\Controllers\RelationController::class, 'store'])->name('follow');
 
     Route::get('/signout', function () { Auth::logout(); return redirect('/login'); })->name('signout');
 });

@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\relation;
 use Illuminate\Http\Request;
 
+use Auth;
+use DB;
+
 class RelationController extends Controller
 {
     /**
@@ -35,7 +38,22 @@ class RelationController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $check = Relation::where('follows', $request->id)->where('user_id', Auth::user()->id)->get()->count();
+        if ($check !=0) {
+            Relation::where('follows', $request->id)->where('user_id', Auth::user()->id)->delete();
+            return 'deleted';
+        }
+        try {
+            $postProperty[ 'follows' ] = $request->id;
+            $postProperty[ 'user_id' ] = Auth::user()->id;
+            // input post property
+            Relation::create( $postProperty );
+            return 'added';
+        } catch ( \Exception $e ) {
+            DB::rollback();
+            // return $e;
+            return 'error';
+        }
     }
 
     /**

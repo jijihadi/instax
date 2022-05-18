@@ -8,4 +8,26 @@ use Illuminate\Database\Eloquent\Model;
 class relation extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'follows',
+        'user_id',
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        
+    ];
 }

@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function index()
     {
         $data['post'] = Post::orderBy('created_at', 'desc')->get();
-        $data['user'] = User::inRandomOrder()->limit(5)->get();
+        $data['user'] = User::inRandomOrder()->limit(5)->where('id', 'not like', Auth::user()->id)->get();
         return view('home', $data);
     }
     
@@ -40,6 +40,14 @@ class HomeController extends Controller
         $data['user'] = User::where('id', Auth::user()->id)->get()->toarray()[0];
         $data['post'] = Post::where('user_id', Auth::user()->id)->get();
         return view('profile', $data);
+    }
+
+    public function users($id)
+    {
+        // dd('sup bitch');
+        $data['user'] = User::where('id', $id)->get()->toarray()[0];
+        $data['post'] = Post::where('user_id', $id)->get();
+        return view('account', $data);
     }
     
 }

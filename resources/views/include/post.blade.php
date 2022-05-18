@@ -5,12 +5,19 @@ $i = 0;
     <div class="post-content">
         <div class="post-container">
             {{-- data user --}}
-            {!!smallpp($p->pict)!!}
+            {!! smallpp($p->pict) !!}
             <div class="post-detail">
                 <div class="user-info">
-                    <h5><a href="timeline.html" class="profile"> &nbsp;
+                    <h5><a href="{{ 'peek/' . $p->user_id }}" class="profile"> &nbsp;
                             {{ namabyid('users', 'name', $p->user_id) }}</a>
-                        <a href="#"><span class="following"> following</span></a>
+                        @if (count(allby2id('relations', 'follows', 'user_id', $p->id, Auth::user()->id)) == 0)
+                            <a href="#" class="follow" data-id="{{ $p->id }}"><span
+                                    class="follows f{{ $p->id }}"> follow</span></a>
+                        @endif
+                        @if (count(allby2id('relations', 'follows', 'user_id', $p->id, Auth::user()->id)) != 0)
+                            <a href="#" class="follow" data-id="{{ $p->id }}"><span
+                                    class="follows text-green f{{ $p->id }}"> following</span></a>
+                        @endif
                     </h5>
                 </div>
             </div>
@@ -37,12 +44,13 @@ $i = 0;
                                 class="fa-solid fa-heart fa-xl"></i></a>
                     @endif
                     {{-- comment --}}
-                    <a class="btn social-react " onclick="$('#comment{{$p->id}}').focus()"><i class="fa-solid fa-comment fa-xl"></i></a>
+                    <a class="btn social-react " onclick="$('#comment{{ $p->id }}').focus()"><i
+                            class="fa-solid fa-comment fa-xl"></i></a>
                     {{-- share --}}
                     <a class="btn social-react"><i class="fa-solid fa-share fa-xl"></i></a>
                 </div>
                 {{-- like count --}}
-                <div class="post-like l{{$p->id}}">
+                <div class="post-like l{{ $p->id }}">
                     liked by {{ count(allbykey('likes', 'post_id', $p->id)) }} people
                 </div>
                 {{-- content --}}
@@ -55,14 +63,14 @@ $i = 0;
                         more</b></a>
                 <div class="line-divider"></div>
                 {{-- comment show --}}
-                <div class="container-comment c{{$p->id}}">
+                <div class="container-comment c{{ $p->id }}">
                     @php
                         $comm = limitbykey('comments', 'post_id', $p->id, 2);
                     @endphp
                     @if (!empty($comm->toarray()))
                         @foreach ($comm as $c)
                             <div class="post-comment">
-                                <p><a href="timeline.html"
+                                <p><a href="{{'peek/'.$c->user_id}}"
                                         class="profile-link">{{ namabyid('users', 'name', $c->user_id) }} </a><i
                                         class="em em-laughing"></i>
                                     {{ $c->text }}</p>
@@ -94,15 +102,23 @@ $i = 0;
                                             class="profile-photo-xs pull-left" />
                                         <div class="post-detail">
                                             <div class="user-info">
-                                                <h5><a href="timeline.html" class="profile-link"> &nbsp;
-                                                        {{ namabyid('users', 'name', $p->user_id) }}</a> <span
-                                                        class="following">following</span>
-                                                </h5>
+                                                <h5><a href="{{ 'peek/' . $p->user_id }}" class="profile"> &nbsp;
+                                                    {{ namabyid('users', 'name', $p->user_id) }}</a>
+                                                @if (count(allby2id('relations', 'follows', 'user_id', $p->id, Auth::user()->id)) == 0)
+                                                    <a href="#" class="follow" data-id="{{ $p->id }}"><span
+                                                            class="follows f{{ $p->id }}"> follow</span></a>
+                                                @endif
+                                                @if (count(allby2id('relations', 'follows', 'user_id', $p->id, Auth::user()->id)) != 0)
+                                                    <a href="#" class="follow" data-id="{{ $p->id }}"><span
+                                                            class="follows text-green f{{ $p->id }}"> following</span></a>
+                                                @endif
+                                            </h5>
                                             </div>
                                             <div class="reaction">
                                                 {{-- like proccess --}}
                                                 @if (count(allby2id('likes', 'post_id', 'user_id', $p->id, Auth::user()->id)) == 0)
-                                                    <a id="like2" data-id="{{ $p->id }}" class="btn like social-react {{ $p->id }}"><i
+                                                    <a id="like2" data-id="{{ $p->id }}"
+                                                        class="btn like social-react {{ $p->id }}"><i
                                                             class="fa-solid fa-heart fa-xl"></i></a>
                                                 @endif
                                                 @if (count(allby2id('likes', 'post_id', 'user_id', $p->id, Auth::user()->id)) != 0)
@@ -111,11 +127,13 @@ $i = 0;
                                                             class="fa-solid fa-heart fa-xl"></i></a>
                                                 @endif
                                                 {{-- comment --}}
-                                                <a class="btn social-react " onclick="$('.modal-{{ $i }}').modal('toggle');$('#comment{{$p->id}}').focus()"><i class="fa-solid fa-comment fa-xl"></i></a>
+                                                <a class="btn social-react "
+                                                    onclick="$('.modal-{{ $i }}').modal('toggle');$('#comment{{ $p->id }}').focus()"><i
+                                                        class="fa-solid fa-comment fa-xl"></i></a>
                                                 {{-- share --}}
                                                 <a class="btn social-react"><i class="fa-solid fa-share fa-xl"></i></a>
                                             </div>
-                                            <div class="post-like l2{{$p->id}}">
+                                            <div class="post-like l2{{ $p->id }}">
                                                 liked by {{ count(allbykey('likes', 'post_id', $p->id)) }} people
                                             </div>
                                             <div class="line-divider"></div>
@@ -130,7 +148,7 @@ $i = 0;
                                             @if (!empty($comm->toarray()))
                                                 @foreach ($comm as $c)
                                                     <div class="post-comment">
-                                                        <p><a href="timeline.html"
+                                                        <p><a href="{{'peek/'.$c->user_id}}"
                                                                 class="profile-link">{{ namabyid('users', 'name', $c->user_id) }}
                                                             </a><i class="em em-laughing"></i>
                                                             {{ $c->text }}</p>
@@ -148,11 +166,12 @@ $i = 0;
                 {{-- post own comment --}}
 
                 <div class="post-comment">
-                    {!!smallpp($p->pict)!!}
-                    <form data-id="{{$p->id}}" method="POST" class="comment col-lg-12 col-md-12 col-xs-12 ">
+                    {!! smallpp($p->pict) !!}
+                    <form data-id="{{ $p->id }}" method="POST" class="comment col-lg-12 col-md-12 col-xs-12 ">
                         @csrf
-                        <input type="hidden" value="{{$p->id}}" name="id">
-                        <input type="text" class="form-control comment-input" id="comment{{$p->id}}" name="text" placeholder="Post a comment">
+                        <input type="hidden" value="{{ $p->id }}" name="id">
+                        <input type="text" class="form-control comment-input" id="comment{{ $p->id }}"
+                            name="text" placeholder="Post a comment">
                     </form>
                 </div>
             </div>
